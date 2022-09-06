@@ -24,9 +24,4 @@ if __name__ == '__main__':
     # Add month
 
 
-
-
-
-    
-
     print('Slay')
