@@ -7,6 +7,8 @@
 # income tracking.
 
 from fileinput import filename
+from tempfile import NamedTemporaryFile
+import shutil
 from posixpath import split
 import csv
 from csv import writer
@@ -59,7 +61,9 @@ if __name__ == '__main__':
     writeFile(fileName, year, month, total_income, bills)
 
     # Edit Month
+    tempFile = NamedTemporaryFile(mode='w', delete=False)
 
+    # https://stackoverflow.com/questions/46126082/how-to-update-rows-in-a-csv-file
 
 
 
