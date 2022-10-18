@@ -56,7 +56,7 @@ if __name__ == '__main__':
 
     # Menu (Add new month, View precious months, Edit Prevous month)
     while(True):
-        menu_choice = input(" [1]< View Previous Months >, [2]< Add New Month >, [3]< Edit Previous Mont >, [4]< Exit >")
+        menu_choice = int(input(" [1]< View Previous Months >, [2]< Add New Month >, [3]< Edit Previous Mont >, [4]< Exit > \n"))
 
         if menu_choice is 1:
             # View Months - Read File
