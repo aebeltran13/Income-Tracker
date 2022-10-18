@@ -40,6 +40,13 @@ def writeFile(fileName, year, month, total_income, bills):
 
         csv_writer.writerow([year, month, total_income, bills, after_bills, savings, monthly_spend, weekly_spend, weekly_spend])
 
+def addMonth():
+    year = input("Enter Year: ")
+    month = input("Enter Month: ")
+    total_income = float(input("Enter Total Income: "))
+    bills = float(input("Enter Bills: "))
+    writeFile(fileName, year, month, total_income, bills)
+
 
 if __name__ == '__main__':
 
@@ -48,23 +55,24 @@ if __name__ == '__main__':
     print("\nHello Slay\nWhat would you like to do\n")
 
     # Menu (Add new month, View precious months, Edit Prevous month)
+    while(True):
+        menu_choice = input(" [1]< View Previous Months >, [2]< Add New Month >, [3]< Edit Previous Mont >, [4]< Exit >")
 
+        if menu_choice is 1:
+            # View Months - Read File
+            readFile(fileName)
+        elif menu_choice is 2:
+            # Add month
+            addMonth()
+        elif menu_choice is 3:
+            # Edit Month
+            tempFile = NamedTemporaryFile(mode='w', delete=False)
 
-    # View Months - Read File
-    readFile(fileName)
-
-    # Add month
-    year = input("Enter Year: ")
-    month = input("Enter Month: ")
-    total_income = float(input("Enter Total Income: "))
-    bills = float(input("Enter Bills: "))
-    writeFile(fileName, year, month, total_income, bills)
-
-    # Edit Month
-    tempFile = NamedTemporaryFile(mode='w', delete=False)
-
-    # https://stackoverflow.com/questions/46126082/how-to-update-rows-in-a-csv-file
-
+            # https://stackoverflow.com/questions/46126082/how-to-update-rows-in-a-csv-file
+        elif menu_choice is 4:
+            break
+        else:
+            print("Unknown Option")
 
 
     print('Slay')
