@@ -6,6 +6,7 @@
 # The purpose is to replicate what I do in a spread sheet and automate my monthly
 # income tracking.
 
+from calendar import month
 from fileinput import filename
 from tempfile import NamedTemporaryFile
 import shutil
@@ -56,6 +57,7 @@ if __name__ == '__main__':
 
     # Menu (Add new month, View precious months, Edit Prevous month)
     while(True):
+        print                  ("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n")
         menu_choice = int(input(" [1]< View Previous Months >, [2]< Add New Month >, [3]< Edit Previous Mont >, [4]< Exit > \n"))
 
         if menu_choice is 1:
@@ -66,9 +68,9 @@ if __name__ == '__main__':
             addMonth()
         elif menu_choice is 3:
             # Edit Month
-            tempFile = NamedTemporaryFile(mode='w', delete=False)
+            print("Working on it! ( ͡ᵔ ͜ʖ ͡ᵔ) ")
 
-            # https://stackoverflow.com/questions/46126082/how-to-update-rows-in-a-csv-file
+
         elif menu_choice is 4:
             break
         else:
